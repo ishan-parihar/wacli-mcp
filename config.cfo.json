@@ -1,0 +1,17 @@
+{
+  "enabledTools": [
+    "chats",
+    "contacts",
+    "messages"
+  ],
+  "allowedTools": [
+    "wacli_chats_list",
+    "wacli_chats_show",
+    "wacli_contacts_search",
+    "wacli_contacts_show",
+    "wacli_messages_list",
+    "wacli_messages_search"
+  ],
+  "toolTimeoutMs": 30000,
+  "wacliPath": "/home/ishanp/go/bin/wacli"
+}

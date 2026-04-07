@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "wacli-mcp": {
+      "command": "node",
+      "args": ["/absolute/path/to/wacli-mcp/dist/index.js"],
+      "env": {
+        "WACLI_MCP_CONFIG": "/absolute/path/to/wacli-mcp/config.json"
+      }
+    }
+  }
+}

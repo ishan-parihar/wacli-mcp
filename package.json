@@ -1,0 +1,26 @@
+{
+  "name": "wacli-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for WhatsApp via wacli CLI — messages, chats, contacts, groups, media, send",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "wacli-mcp": "dist/index.js" },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "start:stdio": "node dist/index.js --transport stdio",
+    "start:http": "node dist/index.js --transport http --port 3110",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "^5.7.3"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,13 @@
+{
+  "enabledTools": [
+    "chats",
+    "messages",
+    "contacts",
+    "groups",
+    "send",
+    "media"
+  ],
+  "allowedTools": null,
+  "toolTimeoutMs": 30000,
+  "wacliPath": "/home/ishanp/go/bin/wacli"
+}

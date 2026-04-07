@@ -1,0 +1,92 @@
+# wacli-mcp per-agent tool scoping for Strategos
+# Use with: env: { WACLI_MCP_CONFIG: "/path/to/config.<role>.json" }
+
+agents:
+  cio:
+    role: "Chief Intelligence Officer"
+    config: "config.cio.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_*"
+        - "wacli_messages_*"
+        - "wacli_contacts_search"
+        - "wacli_contacts_show"
+        - "wacli_groups_list"
+        - "wacli_groups_info"
+        - "wacli_media_download"
+
+  cro:
+    role: "Chief Relational Officer"
+    config: "config.cro.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_*"
+        - "wacli_contacts_*"
+        - "wacli_messages_list"
+        - "wacli_messages_search"
+        - "wacli_messages_show"
+        - "wacli_groups_list"
+        - "wacli_groups_info"
+
+  cmo:
+    role: "Chief Marketing Officer"
+    config: "config.cmo.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_*"
+        - "wacli_messages_*"
+        - "wacli_contacts_search"
+        - "wacli_contacts_show"
+        - "wacli_groups_*"
+        - "wacli_send_*"
+        - "wacli_media_download"
+
+  coo:
+    role: "Chief Operating Officer"
+    config: "config.coo.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_*"
+        - "wacli_messages_*"
+        - "wacli_contacts_search"
+        - "wacli_contacts_show"
+        - "wacli_groups_list"
+        - "wacli_groups_info"
+        - "wacli_send_text"
+
+  ceo:
+    role: "Chief Executive Officer"
+    config: "config.ceo.json"
+    mcp_tools:
+      wacli-mcp:
+        - "*"
+
+  cfo:
+    role: "Chief Financial Officer"
+    config: "config.cfo.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_list"
+        - "wacli_chats_show"
+        - "wacli_contacts_search"
+        - "wacli_contacts_show"
+        - "wacli_messages_list"
+        - "wacli_messages_search"
+
+  cpo:
+    role: "Chief Psychology Officer"
+    config: "config.cpo.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_list"
+        - "wacli_messages_list"
+        - "wacli_contacts_search"
+        - "wacli_messages_search"
+
+  physician:
+    role: "Physician — Health"
+    config: "config.physician.json"
+    mcp_tools:
+      wacli-mcp:
+        - "wacli_chats_list"
+        - "wacli_contacts_search"

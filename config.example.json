@@ -1,0 +1,9 @@
+{
+  "storePath": "~/.wacli",
+  "wacliPath": "/home/ishanp/go/bin/wacli",
+  "transport": "stdio",
+  "httpPort": 3110,
+  "enabledTools": ["chats", "messages", "contacts", "groups", "send", "media"],
+  "allowedTools": null,
+  "toolTimeoutMs": 30000
+}
