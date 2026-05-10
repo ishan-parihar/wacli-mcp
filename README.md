@@ -6,6 +6,20 @@
 
 **WhatsApp as MCP tools** — 28 tools for messages, chats, contacts, groups, media, and send. Built on the [wacli CLI](https://github.com/steipete/wacli), designed for AI agents.
 
+## The Problem
+WhatsApp is an inherently stateful protocol (WebSockets, active sessions), but MCP servers are typically treated as stateless tool providers. A naive MCP wrapper that simply spawns a CLI command for every request would be prohibitively slow due to session handshake overhead and would fail to handle long-running operations like group synchronization. The challenge was to create a low-latency bridge that maintains persistent session state while providing the AI agent with a clean, stateless tool interface.
+
+## Engineering Highlights
+
+### Session-Aware Transport Bridge
+To handle the mismatch between stateless JSON-RPC and stateful WhatsApp sessions, I implemented a custom HTTP transport that manages `mcp-session-id` mappings. This allows the server to maintain persistent state for multiple concurrent AI agents, ensuring that session-heavy operations (like group mutations) are handled reliably without re-authenticating on every call.
+
+### High-Performance CLI-to-JSON Middleware
+Instead of implementing the complex WhatsApp protocol in TypeScript, I built a high-performance bridge to the `wacli` Go binary. By leveraging Go's FTS5 (Full Text Search) support and optimizing process spawning for JSON output, the MCP server provides near-instant search and retrieval across thousands of messages, bypassing the overhead of traditional browser automation.
+
+### Granular Tool Scoping (Per-Agent Access Control)
+To prevent unauthorized access and reduce LLM confusion, I implemented a glob-based tool filtering system. This enables "persona-based" deployment: the same MCP server can be configured to provide full access to a "CEO" agent while restricting a "CFO" agent to read-only finance-related tools, ensuring strict operational boundaries.
+
 ## Quick Start
 
 ### 1. Install wacli
