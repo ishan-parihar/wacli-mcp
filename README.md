@@ -252,3 +252,7 @@ Operations like `wacli_groups_info`, `wacli_groups_refresh`, and invite manageme
 ## License
 
 MIT
+
+---
+
+Developed by [Ishan Parihar](https://github.com/ishanparihar) — If you find this useful, [consider supporting](https://rzp.io/rzp/ishan-parihar)
